@@ -616,9 +616,8 @@ std::vector<uint64_t> Board::enum_before_spawn_normalized_keys() const {
 
 std::vector<uint64_t> Board::enum_before_action_normalized_keys() const {
     std::vector<uint64_t> normalized_prev_afterstate_keys;
-    std::vector<Action> prev_actions = invertible_actions();
 
-    for (Action action : prev_actions) {
+    for (Action action : invertible_actions()) {
         std::vector<uint64_t> prev_afterstate_keys = inverse_action(action);
 
         for (uint64_t afterstate_key : prev_afterstate_keys) {

@@ -98,6 +98,9 @@ int main() {
                             next_state_probs.emplace_back(1.0 / (double)empty_cnt * 0.1);
                         }
                     }
+                    if (!all_next_states_calculated) {
+                        break;
+                    }
                 }
 
                 if (all_next_states_calculated) {
@@ -142,8 +145,10 @@ int main() {
                 bool all_afterstates_calculated = true;
 
                 for (Action action : state_board.legal_actions()) {
-                    double reward = state_board.do_action(action);
-                    uint64_t one_afterstate_key = state_board.normalize();
+                    Board afterstate_board(0);
+                    afterstate_board.set(state_key);
+                    double reward = afterstate_board.do_action(action);
+                    uint64_t one_afterstate_key = afterstate_board.normalize();
                     if (afterstate_values.find(one_afterstate_key) != afterstate_values.end()) {
                         max_q_value = std::max(max_q_value, reward + afterstate_values[one_afterstate_key]);
                     } else {
