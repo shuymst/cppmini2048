@@ -47,11 +47,10 @@ int main() {
                 continue;
             }
 
-            for (Action action : ALL_ACTIONS) {
+            std::vector<Action> legal_actions = board.legal_actions();
+
+            for (Action action : legal_actions) {
                 board.set(k);
-                if (!board.is_changed_by(action)) {
-                    continue;
-                }
                 board.do_action(action);
                 uint64_t afterstate_key = board.normalize();
                 board.set(afterstate_key);
