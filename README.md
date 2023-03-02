@@ -1,11 +1,11 @@
 # 3 × 3盤面の2048の完全解析 (Strongly Solving 2048 on 3 × 3 Board)
 
 ## 2048
-2048は$4 \times 4$盤面上で行われるパズルゲームです。https://play2048.co でプレイすることが出来ます。
+2048は $4 \times 4$ 盤面上で行われるパズルゲームです。https://play2048.co でプレイすることが出来ます。
 
 ## $3 \times 3$盤面の2048の完全解析
 2048は状態数の多さから完全解析が困難です。
-このリポジトリは2048を$3 \times 3$盤面に縮小したゲームであるmini2048を考え、その完全解析を行ったものです。
+このリポジトリは2048を $3 \times 3$ 盤面に縮小したゲームであるmini2048を考え、その完全解析を行ったものです。
 成果として投稿した論文は[こちら](https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=221984&item_no=1&page_id=13&block_id=8)になります。
 
 ## 環境
